@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 class DnsController extends AbstractController
 {
@@ -32,9 +33,16 @@ class DnsController extends AbstractController
         For getting the dns records,
         By using DnsService we can check the constraints
     */
-    #[Route('/api/dns/{domain}', name: 'api_dnss', methods: ['GET'])]
-    public function getDnsRecords(string $domain): JsonResponse
+    #[Route('/api/dns', name: 'api_dns', methods: ['GET'])]
+    public function getDnsRecords(Request $request): JsonResponse
     {
+        $domain = $request->query->get('domain');
+
+        if (!$domain) {
+            return $this->json([
+                'error' => 'Domain name is required',
+            ], Response::HTTP_BAD_REQUEST);
+        }
         //Check if it is a valid domain
         if (!$this->dnsSrv->isValidDomain($domain)) {
             return $this->json([

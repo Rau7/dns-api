@@ -49,6 +49,8 @@ Steps:
 
 8- Done
 
+9- One last check for inputs with https:// caused a problem because I was using regular paths for inputs so I switched to query params.
+
 What I did simply?
 
 1- Created a service for domains (we need to separate the logic from the controller). (isValidDomain, isDomainExists, getDnsRecords)

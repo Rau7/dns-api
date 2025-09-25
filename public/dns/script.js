@@ -78,7 +78,7 @@ $(document).ready(function () {
 
         //checkforempty domain
         if (!domain) {
-            //showError("Please enter a domain name");
+            showError("Please enter a domain name");
             return;
         }
 
@@ -89,11 +89,11 @@ $(document).ready(function () {
 
         // AJAX çağrısı
         $.ajax({
-            url: "/api/dns/" + encodeURIComponent(domain),
+            url: "/api/dns",
+            data: { domain: domain },
             type: "GET",
             dataType: "json",
             success: function (data) {
-                console.log(data);
                 if (data.success) {
                     showResult(data.records);
                 } else {
@@ -101,7 +101,12 @@ $(document).ready(function () {
                 }
             },
             error: function (xhr, status, error) {
-                var errorMsg = "Error: " + error;
+                let response = xhr.responseJSON;
+                let errorMsg =
+                    "Error: " +
+                    response.error +
+                    " for domain " +
+                    response.domain;
                 showError(errorMsg);
             },
             complete: function () {
