@@ -87,7 +87,7 @@ $(document).ready(function () {
         hideError();
         $("#result").hide();
 
-        // AJAX çağrısı
+        // Ajax call
         $.ajax({
             url: "/api/dns",
             data: { domain: domain },
