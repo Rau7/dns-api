@@ -1,4 +1,6 @@
-DNS Records Api - Project with Symfony 7.3
+DNS Records Api - Project with Symfony 7.3 -
+
+Author: Alp Toker
 
 Steps:
 
@@ -44,3 +46,15 @@ Steps:
 6- Twig bundle added - setting up the mainpage
 
 7- asset bundle added for twig
+
+8- Done
+
+What I did simply?
+
+1- Created a service for domains (we need to separate the logic from the controller). (isValidDomain, isDomainExists, getDnsRecords)
+
+2- Created a Controller for homepage and api endpoint for dns records.
+
+3- Created a Twig template for homepage, use JQuery for ajax call and reactive design.
+
+I assumed and also checked that for dns lookups input should be the format with xyz.com, google.com etc.

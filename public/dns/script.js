@@ -1,6 +1,9 @@
 "use strict";
 
-// Author: Alp Toker
+/*
+    @Author: Alp Toker
+*/
+
 $(document).ready(function () {
     //hide result and error divs at the beginning
     $("#result").hide();
