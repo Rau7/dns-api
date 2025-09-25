@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     height: 100vh;
+    padding: 20px;
 }
 #inner-container {
     padding: 20px 30px;
