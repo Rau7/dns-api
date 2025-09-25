@@ -10,6 +10,7 @@ $(document).ready(function () {
     const showError = (message) => {
         $(".error").text(message).show();
         $("#result").hide();
+        $("#loading").hide();
     };
 
     const hideError = () => {
@@ -79,7 +80,7 @@ $(document).ready(function () {
         }
 
         // Loading state
-        //$(this).prop("disabled", true).text("Checking...");
+        $("#loading").show();
         hideError();
         $("#result").hide();
 
@@ -101,7 +102,7 @@ $(document).ready(function () {
                 showError(errorMsg);
             },
             complete: function () {
-                $("#check").prop("disabled", false).text("Check");
+                $("#loading").hide();
             },
         });
     });
