@@ -40,3 +40,7 @@ Steps:
                 ]
             }
         }
+
+6- Twig bundle added - setting up the mainpage
+
+7- asset bundle added for twig

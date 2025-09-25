@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS API</title>
+    <link rel="stylesheet" href="{{ asset('dns/styles.css') }}" />
+    <body>
+        <div id="main-container">
+        <div id="inner-container">
+          <h1>DNS API</h1>
+          <div class="form-area">
+            <input
+              type="text"
+              id="check-input"
+              placeholder="Enter a domain name"
+            />
+            <span class="error">error</span>
+            <button id="check">Check</button>
+          </div>
+          <div id="result">
+            <div id="res-list">
+              <div id="a-records">
+                <h3>A Records</h3>
+                <ul id="rec-list">
+                  <li>142.142.142.142</li>
+                  <li>142.142.142.142</li>
+                </ul>
+              </div>
+              <div id="aaaa-records">
+                <h3>AAAA Records</h3>
+                <ul id="rec-list">
+                  <li>142.142.142.142</li>
+                  <li>142.142.142.142</li>
+                </ul>
+              </div>
+              <div id="mx-records">
+                <h3>MX Records</h3>
+                <ul id="rec-list">
+                  <li>142.142.142.142 (priority 10)</li>
+                  <li>142.142.142.142 (priority 7)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('dns/script.js') }}"></script>
+</html>
