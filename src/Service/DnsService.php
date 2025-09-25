@@ -76,7 +76,7 @@ class DnsService
 
             //we also need to sort the MX records by their priorities.
             usort($resultArr['MX'], function ($a, $b) {
-                return $b['priority'] - $a['priority'];
+                return $a['priority'] - $b['priority'];
             });
         }
 

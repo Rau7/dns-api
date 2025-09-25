@@ -51,12 +51,6 @@ Steps:
 
 9- One last check for inputs with https:// caused a problem because I was using regular paths for inputs so I switched to query params.
 
-What I did simply?
-
-1- Created a service for domains (we need to separate the logic from the controller). (isValidDomain, isDomainExists, getDnsRecords)
-
-2- Created a Controller for homepage and api endpoint for dns records.
-
-3- Created a Twig template for homepage, use JQuery for ajax call and reactive design.
+10- I checked and found out that MX priorities should be sorted from lowest number to highest number because lower number means higher priority.
 
 I assumed and also checked that for dns lookups input should be the format with xyz.com, google.com etc.
